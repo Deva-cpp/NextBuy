@@ -1,0 +1,810 @@
+[
+  {
+    "test": "Basic Health Check",
+    "timestamp": "2025-07-03T23:21:27.921051",
+    "status_code": 200,
+    "response_time": 2.079000234603882,
+    "success": true,
+    "message": "Health check successful"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:27.934586",
+    "status_code": 200,
+    "response_time": 0.012799501419067383,
+    "success": true,
+    "message": "Success (attempt 1)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.048198",
+    "status_code": 200,
+    "response_time": 0.012841463088989258,
+    "success": true,
+    "message": "Success (attempt 2)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.160226",
+    "status_code": 200,
+    "response_time": 0.011296749114990234,
+    "success": true,
+    "message": "Success (attempt 3)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.281705",
+    "status_code": 200,
+    "response_time": 0.01772594451904297,
+    "success": true,
+    "message": "Success (attempt 4)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.394500",
+    "status_code": 200,
+    "response_time": 0.011039495468139648,
+    "success": true,
+    "message": "Success (attempt 5)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.503407",
+    "status_code": 200,
+    "response_time": 0.007973909378051758,
+    "success": true,
+    "message": "Success (attempt 6)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.613691",
+    "status_code": 200,
+    "response_time": 0.009494781494140625,
+    "success": true,
+    "message": "Success (attempt 7)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.724191",
+    "status_code": 200,
+    "response_time": 0.00910639762878418,
+    "success": true,
+    "message": "Success (attempt 8)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.836245",
+    "status_code": 200,
+    "response_time": 0.011284112930297852,
+    "success": true,
+    "message": "Success (attempt 9)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:28.947681",
+    "status_code": 200,
+    "response_time": 0.01073312759399414,
+    "success": true,
+    "message": "Success (attempt 10)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.057707",
+    "status_code": 200,
+    "response_time": 0.009694814682006836,
+    "success": true,
+    "message": "Success (attempt 11)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.167825",
+    "status_code": 200,
+    "response_time": 0.009772300720214844,
+    "success": true,
+    "message": "Success (attempt 12)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.277881",
+    "status_code": 200,
+    "response_time": 0.009539365768432617,
+    "success": true,
+    "message": "Success (attempt 13)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.388422",
+    "status_code": 200,
+    "response_time": 0.00892186164855957,
+    "success": true,
+    "message": "Success (attempt 14)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.499205",
+    "status_code": 200,
+    "response_time": 0.01013803482055664,
+    "success": true,
+    "message": "Success (attempt 15)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.639000",
+    "status_code": 200,
+    "response_time": 0.019072532653808594,
+    "success": true,
+    "message": "Success (attempt 16)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.764281",
+    "status_code": 200,
+    "response_time": 0.012850522994995117,
+    "success": true,
+    "message": "Success (attempt 17)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.879941",
+    "status_code": 200,
+    "response_time": 0.014978885650634766,
+    "success": true,
+    "message": "Success (attempt 18)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:29.990311",
+    "status_code": 200,
+    "response_time": 0.009879350662231445,
+    "success": true,
+    "message": "Success (attempt 19)"
+  },
+  {
+    "test": "Rate Limiting",
+    "timestamp": "2025-07-03T23:21:30.107195",
+    "status_code": 200,
+    "response_time": 0.015584707260131836,
+    "success": true,
+    "message": "Success (attempt 20)"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:30.224578",
+    "status_code": 403,
+    "response_time": 0.016169071197509766,
+    "success": true,
+    "message": "User-Agent: curl/7.68.0"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:30.741304",
+    "status_code": 403,
+    "response_time": 0.016200542449951172,
+    "success": true,
+    "message": "User-Agent: wget/1.20.3"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:31.260713",
+    "status_code": 403,
+    "response_time": 0.0188753604888916,
+    "success": true,
+    "message": "User-Agent: python-requests/2.28.1"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:31.779289",
+    "status_code": 403,
+    "response_time": 0.018225908279418945,
+    "success": true,
+    "message": "User-Agent: bot/1.0"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:32.301162",
+    "status_code": 403,
+    "response_time": 0.020918846130371094,
+    "success": true,
+    "message": "User-Agent: crawler/2.0"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:32.813903",
+    "status_code": 403,
+    "response_time": 0.012054681777954102,
+    "success": true,
+    "message": "User-Agent: spider/1.5"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:33.329470",
+    "status_code": 403,
+    "response_time": 0.014791250228881836,
+    "success": true,
+    "message": "User-Agent: scraper"
+  },
+  {
+    "test": "Suspicious User Agent",
+    "timestamp": "2025-07-03T23:21:33.843603",
+    "status_code": 403,
+    "response_time": 0.013721466064453125,
+    "success": true,
+    "message": "User-Agent: Mozilla/5.0 (compatible; Googl..."
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:34.353719",
+    "status_code": 400,
+    "response_time": 0.009197473526000977,
+    "success": true,
+    "message": "Payload: 1' OR '1'='1"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:34.662686",
+    "status_code": 400,
+    "response_time": 0.008416175842285156,
+    "success": true,
+    "message": "Payload: 1; DROP TABLE users--"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:34.976462",
+    "status_code": 400,
+    "response_time": 0.01330423355102539,
+    "success": true,
+    "message": "Payload: ' UNION SELECT * FROM users--"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:35.286282",
+    "status_code": 400,
+    "response_time": 0.009200096130371094,
+    "success": true,
+    "message": "Payload: 1' AND 1=1--"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:35.597178",
+    "status_code": 400,
+    "response_time": 0.009675264358520508,
+    "success": true,
+    "message": "Payload: '; INSERT INTO users VALUES('t..."
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:35.905648",
+    "status_code": 400,
+    "response_time": 0.008101940155029297,
+    "success": true,
+    "message": "Payload: 1' OR 1=1#"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:36.216895",
+    "status_code": 400,
+    "response_time": 0.010783672332763672,
+    "success": true,
+    "message": "Payload: admin'--"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:36.526006",
+    "status_code": 400,
+    "response_time": 0.008520841598510742,
+    "success": true,
+    "message": "Payload: ' OR 'x'='x"
+  },
+  {
+    "test": "SQL Injection Test",
+    "timestamp": "2025-07-03T23:21:36.835281",
+    "status_code": 400,
+    "response_time": 0.008487462997436523,
+    "success": true,
+    "message": "Payload: 1' UNION ALL SELECT NULL,NULL,..."
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:37.190897",
+    "status_code": 200,
+    "response_time": 0.010854959487915039,
+    "success": true,
+    "message": "Thread 0, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:37.191074",
+    "status_code": 200,
+    "response_time": 0.010929584503173828,
+    "success": true,
+    "message": "Thread 0, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:37.191170",
+    "status_code": 200,
+    "response_time": 0.011864185333251953,
+    "success": true,
+    "message": "Thread 0, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:37.191246",
+    "status_code": 200,
+    "response_time": 0.011155128479003906,
+    "success": true,
+    "message": "Thread 0, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:37.191308",
+    "status_code": 200,
+    "response_time": 0.00834345817565918,
+    "success": true,
+    "message": "Thread 0, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.490899",
+    "status_code": 200,
+    "response_time": 2.0567517280578613,
+    "success": true,
+    "message": "Thread 1, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.491136",
+    "status_code": 200,
+    "response_time": 0.044425010681152344,
+    "success": true,
+    "message": "Thread 1, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.491265",
+    "status_code": 200,
+    "response_time": 0.11776995658874512,
+    "success": true,
+    "message": "Thread 1, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.491376",
+    "status_code": 200,
+    "response_time": 0.07529139518737793,
+    "success": true,
+    "message": "Thread 1, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.491462",
+    "status_code": 200,
+    "response_time": 0.05808520317077637,
+    "success": true,
+    "message": "Thread 1, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.499664",
+    "status_code": 200,
+    "response_time": 2.0595922470092773,
+    "success": true,
+    "message": "Thread 4, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.499953",
+    "status_code": 200,
+    "response_time": 0.044114112854003906,
+    "success": true,
+    "message": "Thread 4, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.500055",
+    "status_code": 200,
+    "response_time": 0.1269996166229248,
+    "success": true,
+    "message": "Thread 4, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.500151",
+    "status_code": 200,
+    "response_time": 0.06386733055114746,
+    "success": true,
+    "message": "Thread 4, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.500233",
+    "status_code": 200,
+    "response_time": 0.06018638610839844,
+    "success": true,
+    "message": "Thread 4, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.506773",
+    "status_code": 200,
+    "response_time": 2.069746971130371,
+    "success": true,
+    "message": "Thread 3, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.507037",
+    "status_code": 200,
+    "response_time": 0.05000042915344238,
+    "success": true,
+    "message": "Thread 3, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.507121",
+    "status_code": 200,
+    "response_time": 0.12233948707580566,
+    "success": true,
+    "message": "Thread 3, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.507184",
+    "status_code": 200,
+    "response_time": 0.061830997467041016,
+    "success": true,
+    "message": "Thread 3, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.507250",
+    "status_code": 200,
+    "response_time": 0.061122894287109375,
+    "success": true,
+    "message": "Thread 3, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.515346",
+    "status_code": 200,
+    "response_time": 2.0586583614349365,
+    "success": true,
+    "message": "Thread 9, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.515581",
+    "status_code": 200,
+    "response_time": 0.050791263580322266,
+    "success": true,
+    "message": "Thread 9, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.515686",
+    "status_code": 200,
+    "response_time": 0.11914801597595215,
+    "success": true,
+    "message": "Thread 9, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.515748",
+    "status_code": 200,
+    "response_time": 0.061829328536987305,
+    "success": true,
+    "message": "Thread 9, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.515800",
+    "status_code": 200,
+    "response_time": 0.06346249580383301,
+    "success": true,
+    "message": "Thread 9, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.558681",
+    "status_code": 200,
+    "response_time": 2.0736641883850098,
+    "success": true,
+    "message": "Thread 7, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.558900",
+    "status_code": 200,
+    "response_time": 0.11956095695495605,
+    "success": true,
+    "message": "Thread 7, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.559047",
+    "status_code": 200,
+    "response_time": 0.07711172103881836,
+    "success": true,
+    "message": "Thread 7, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.559156",
+    "status_code": 200,
+    "response_time": 0.05865335464477539,
+    "success": true,
+    "message": "Thread 7, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.559235",
+    "status_code": 200,
+    "response_time": 0.07386183738708496,
+    "success": true,
+    "message": "Thread 7, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.566505",
+    "status_code": 200,
+    "response_time": 2.142258644104004,
+    "success": true,
+    "message": "Thread 2, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.566664",
+    "status_code": 200,
+    "response_time": 0.11588191986083984,
+    "success": true,
+    "message": "Thread 2, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.566756",
+    "status_code": 200,
+    "response_time": 0.0602564811706543,
+    "success": true,
+    "message": "Thread 2, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.566846",
+    "status_code": 200,
+    "response_time": 0.06670331954956055,
+    "success": true,
+    "message": "Thread 2, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.566908",
+    "status_code": 200,
+    "response_time": 0.04181647300720215,
+    "success": true,
+    "message": "Thread 2, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.576712",
+    "status_code": 200,
+    "response_time": 2.1624176502227783,
+    "success": true,
+    "message": "Thread 5, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.577020",
+    "status_code": 200,
+    "response_time": 0.09616351127624512,
+    "success": true,
+    "message": "Thread 5, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.577176",
+    "status_code": 200,
+    "response_time": 0.06004929542541504,
+    "success": true,
+    "message": "Thread 5, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.577249",
+    "status_code": 200,
+    "response_time": 0.06822776794433594,
+    "success": true,
+    "message": "Thread 5, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.577332",
+    "status_code": 200,
+    "response_time": 0.04322957992553711,
+    "success": true,
+    "message": "Thread 5, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.585540",
+    "status_code": 200,
+    "response_time": 2.1630711555480957,
+    "success": true,
+    "message": "Thread 8, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.585778",
+    "status_code": 200,
+    "response_time": 0.08863162994384766,
+    "success": true,
+    "message": "Thread 8, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.585881",
+    "status_code": 200,
+    "response_time": 0.059088945388793945,
+    "success": true,
+    "message": "Thread 8, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.585975",
+    "status_code": 200,
+    "response_time": 0.07056164741516113,
+    "success": true,
+    "message": "Thread 8, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.586032",
+    "status_code": 200,
+    "response_time": 0.044545650482177734,
+    "success": true,
+    "message": "Thread 8, Request 4"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.593914",
+    "status_code": 200,
+    "response_time": 2.183875560760498,
+    "success": true,
+    "message": "Thread 6, Request 0"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.594061",
+    "status_code": 200,
+    "response_time": 0.08221888542175293,
+    "success": true,
+    "message": "Thread 6, Request 1"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.594116",
+    "status_code": 200,
+    "response_time": 0.05812358856201172,
+    "success": true,
+    "message": "Thread 6, Request 2"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.594152",
+    "status_code": 200,
+    "response_time": 0.0738379955291748,
+    "success": true,
+    "message": "Thread 6, Request 3"
+  },
+  {
+    "test": "Concurrent Request",
+    "timestamp": "2025-07-03T23:21:39.594209",
+    "status_code": 200,
+    "response_time": 0.04328465461730957,
+    "success": true,
+    "message": "Thread 6, Request 4"
+  },
+  {
+    "test": "POST Request",
+    "timestamp": "2025-07-03T23:21:39.622486",
+    "status_code": 200,
+    "response_time": 0.02709031105041504,
+    "success": true,
+    "message": "Normal JSON POST"
+  },
+  {
+    "test": "POST Request",
+    "timestamp": "2025-07-03T23:21:40.134131",
+    "status_code": 200,
+    "response_time": 0.01137995719909668,
+    "success": true,
+    "message": "Large JSON POST"
+  },
+  {
+    "test": "POST Request",
+    "timestamp": "2025-07-03T23:21:40.639209",
+    "status_code": 400,
+    "response_time": 0.004317522048950195,
+    "success": true,
+    "message": "Malformed JSON POST"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:41.160170",
+    "status_code": 403,
+    "response_time": 0.020043373107910156,
+    "success": true,
+    "message": "X-Real-IP: 192.168.1.100"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:41.481188",
+    "status_code": 403,
+    "response_time": 0.016841888427734375,
+    "success": true,
+    "message": "X-Forwarded-For: 10.0.0.1, 192.168.1.1"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:41.798087",
+    "status_code": 403,
+    "response_time": 0.016562223434448242,
+    "success": true,
+    "message": "X-Forwarded-Host: malicious.com"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:42.115658",
+    "status_code": 403,
+    "response_time": 0.016286134719848633,
+    "success": true,
+    "message": "X-Forwarded-Proto: https"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:42.438831",
+    "status_code": 403,
+    "response_time": 0.02232050895690918,
+    "success": true,
+    "message": "Host: spoofed-host.com"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:42.755017",
+    "status_code": 403,
+    "response_time": 0.015616416931152344,
+    "success": true,
+    "message": "Referer: http://malicious-site.com"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:43.077463",
+    "status_code": 403,
+    "response_time": 0.021645784378051758,
+    "success": true,
+    "message": "Origin: http://evil.com"
+  },
+  {
+    "test": "Header Manipulation",
+    "timestamp": "2025-07-03T23:21:43.395718",
+    "status_code": 403,
+    "response_time": 0.016657590866088867,
+    "success": true,
+    "message": "X-Custom-Header: injection<script>alert('xss')</script>"
+  },
+  {
+    "test": "Session Test 1",
+    "timestamp": "2025-07-03T23:21:43.726985",
+    "status_code": 200,
+    "response_time": 0.013365745544433594,
+    "success": true,
+    "message": "Cookies received: 0"
+  },
+  {
+    "test": "Session Test 2",
+    "timestamp": "2025-07-03T23:21:43.727237",
+    "status_code": 200,
+    "response_time": 0.015094757080078125,
+    "success": true,
+    "message": "Follow-up request"
+  }
+]

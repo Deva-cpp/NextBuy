@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Function Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .result { margin-top: 10px; padding: 10px; border-radius: 3px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>NextBuy Admin Panel Function Test</h1>
+    
+    <div class="test-section">
+        <h2>1. API Connectivity Test</h2>
+        <button onclick="testAPI()">Test Bot Metrics API</button>
+        <div id="api-result" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Auto-Refresh Test</h2>
+        <button onclick="testAutoRefresh()">Test Auto-Refresh Function</button>
+        <div id="auto-refresh-result" class="result"></div>
+        <div>Status: <span id="refresh-status">Not Started</span></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Export Data Test</h2>
+        <button onclick="testExportData()">Test Export Function</button>
+        <div id="export-result" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Reset Data Test</h2>
+        <button onclick="testResetData()">Test Reset Function (Warning: This will reset actual data!)</button>
+        <div id="reset-result" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. Dashboard Integration Test</h2>
+        <button onclick="loadDashboard()">Load Dashboard in IFrame</button>
+        <div id="dashboard-result" class="result"></div>
+        <iframe id="dashboard-frame" width="100%" height="300" style="display:none; margin-top: 10px;"></iframe>
+    </div>
+
+    <script>
+        const baseUrl = 'http://localhost:5000';
+        
+        // Test 1: API Connectivity
+        async function testAPI() {
+            const resultDiv = document.getElementById('api-result');
+            resultDiv.innerHTML = '<div class="info">Testing API connectivity...</div>';
+            
+            try {
+                const response = await fetch(`${baseUrl}/api/admin/bot-metrics`);
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            ✅ API Working!<br>
+                            Total Requests: ${data.totalRequests}<br>
+                            Detected Bots: ${data.detectedBots}<br>
+                            Bot Percentage: ${data.botPercentage}
+                        </div>
+                    `;
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ API Failed: ${error.message}</div>`;
+            }
+        }
+        
+        // Test 2: Auto-Refresh
+        let autoRefreshInterval = null;
+        let refreshCount = 0;
+        
+        async function testAutoRefresh() {
+            const resultDiv = document.getElementById('auto-refresh-result');
+            const statusSpan = document.getElementById('refresh-status');
+            
+            if (autoRefreshInterval) {
+                clearInterval(autoRefreshInterval);
+                autoRefreshInterval = null;
+                resultDiv.innerHTML = '<div class="info">Auto-refresh stopped</div>';
+                statusSpan.textContent = 'Stopped';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="info">Starting auto-refresh test (will run 5 times)...</div>';
+            statusSpan.textContent = 'Running';
+            refreshCount = 0;
+            
+            autoRefreshInterval = setInterval(async () => {
+                refreshCount++;
+                statusSpan.textContent = `Refresh ${refreshCount}/5`;
+                
+                try {
+                    const response = await fetch(`${baseUrl}/api/admin/bot-metrics`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        resultDiv.innerHTML = `
+                            <div class="success">
+                                ✅ Refresh ${refreshCount}: Success<br>
+                                Last update: ${new Date().toLocaleTimeString()}<br>
+                                Total Requests: ${data.totalRequests}
+                            </div>
+                        `;
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    resultDiv.innerHTML = `<div class="error">❌ Refresh ${refreshCount}: Failed - ${error.message}</div>`;
+                }
+                
+                if (refreshCount >= 5) {
+                    clearInterval(autoRefreshInterval);
+                    autoRefreshInterval = null;
+                    statusSpan.textContent = 'Completed';
+                    resultDiv.innerHTML += '<div class="success">✅ Auto-refresh test completed successfully!</div>';
+                }
+            }, 2000); // Every 2 seconds for testing
+        }
+        
+        // Test 3: Export Data
+        async function testExportData() {
+            const resultDiv = document.getElementById('export-result');
+            resultDiv.innerHTML = '<div class="info">Testing export functionality...</div>';
+            
+            try {
+                const response = await fetch(`${baseUrl}/api/admin/bot-metrics`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data for export');
+                }
+                
+                const data = await response.json();
+                
+                const exportData = {
+                    exportedAt: new Date().toISOString(),
+                    exportedBy: 'NextBuy Admin Test',
+                    version: '1.0.0',
+                    data: data
+                };
+                
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+                const downloadAnchorNode = document.createElement('a');
+                downloadAnchorNode.setAttribute("href", dataStr);
+                const dateStr = new Date().toISOString().split('T')[0];
+                downloadAnchorNode.setAttribute("download", `bot_metrics_test_${dateStr}.json`);
+                document.body.appendChild(downloadAnchorNode);
+                downloadAnchorNode.click();
+                downloadAnchorNode.remove();
+                
+                resultDiv.innerHTML = '<div class="success">✅ Export function working! File should be downloaded.</div>';
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Export failed: ${error.message}</div>`;
+            }
+        }
+        
+        // Test 4: Reset Data
+        async function testResetData() {
+            const resultDiv = document.getElementById('reset-result');
+            
+            if (!confirm('WARNING: This will reset actual bot metrics data. Continue?')) {
+                resultDiv.innerHTML = '<div class="info">Reset test cancelled by user</div>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="info">Testing reset functionality...</div>';
+            
+            try {
+                const response = await fetch(`${baseUrl}/api/admin/bot-metrics/reset`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    resultDiv.innerHTML = `<div class="success">✅ Reset function working! Response: ${result.message}</div>`;
+                } else {
+                    const errorData = await response.json().catch(() => ({ message: 'Failed to reset data' }));
+                    throw new Error(errorData.message || 'Failed to reset data');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Reset failed: ${error.message}</div>`;
+            }
+        }
+        
+        // Test 5: Dashboard Integration
+        function loadDashboard() {
+            const resultDiv = document.getElementById('dashboard-result');
+            const iframe = document.getElementById('dashboard-frame');
+            
+            resultDiv.innerHTML = '<div class="info">Loading dashboard in iframe...</div>';
+            
+            iframe.src = `${baseUrl}/api/admin/bot-dashboard`;
+            iframe.style.display = 'block';
+            
+            iframe.onload = function() {
+                resultDiv.innerHTML = '<div class="success">✅ Dashboard loaded successfully!</div>';
+                
+                // Try to access iframe content and test functions
+                setTimeout(() => {
+                    try {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        const hasToggleFunction = iframeDoc.body.innerHTML.includes('toggleAutoRefresh');
+                        const hasExportFunction = iframeDoc.body.innerHTML.includes('exportData');
+                        const hasResetFunction = iframeDoc.body.innerHTML.includes('resetData');
+                        
+                        resultDiv.innerHTML += `
+                            <div class="info">
+                                Dashboard Function Check:<br>
+                                • toggleAutoRefresh: ${hasToggleFunction ? '✅' : '❌'}<br>
+                                • exportData: ${hasExportFunction ? '✅' : '❌'}<br>
+                                • resetData: ${hasResetFunction ? '✅' : '❌'}
+                            </div>
+                        `;
+                    } catch (e) {
+                        resultDiv.innerHTML += '<div class="error">❌ Cannot access iframe content due to CORS policy</div>';
+                    }
+                }, 1000);
+            };
+            
+            iframe.onerror = function() {
+                resultDiv.innerHTML = '<div class="error">❌ Failed to load dashboard</div>';
+            };
+        }
+        
+        // Auto-run API test on load
+        window.onload = function() {
+            testAPI();
+        };
+    </script>
+</body>
+</html>

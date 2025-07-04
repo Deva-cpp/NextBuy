@@ -1,0 +1,33 @@
+{
+  "name": "nextbuy",
+  "version": "1.0.0",
+  "description": "A full-stack e-commerce web app built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "start": "nodemon --watch server server/server.js",
+    "prepare-hackathon": "node prepare-hackathon.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "nextbuy"
+  ],
+  "authors": [
+    "Devendra Kumar Dewangan <devendra@example.com> (System Design & Full Stack Developer)",
+    "Somil Agrawal <somil@example.com> (Information Security Analyst & Database Administrator)",
+    "Abhishek Dixit <abhishek@example.com> (Data Science & Cybersecurity Engineer)"
+  ],
+  "contact": "ankit2004dewangan@gmail.com",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  }
+}

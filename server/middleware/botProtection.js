@@ -433,26 +433,27 @@ export const botDetection = (req, res, next) => {
 
 // Honeypot middleware
 export const honeypotCheck = (req, res, next) => {
-  // Check if the honeypot field is filled (bots often fill all fields)
-  if (req.body.website || req.body.email2 || req.body.phone2) {
-    // This is likely a bot as humans wouldn't see or fill these fields
-    
-    // Log honeypot detection to metrics
-    logBotDetection({
-      method: 'honeypot',
-      ip: req.ip,
-      userAgent: req.headers['user-agent'],
-      path: req.path,
-      details: { 
-        honeypotFields: {
-          website: !!req.body.website,
-          email2: !!req.body.email2,
-          phone2: !!req.body.phone2
-        }
-      }
-    });
-    
-  return res.status(200).json({ success: true }); // Return success to fool the bot
+  // Check if req.body exists and is an object
+  if (req.body && typeof req.body === 'object') {
+    // Check if the honeypot fields are filled (bots often fill all fields)
+    if (req.body.website || req.body.email2 || req.body.phone2) {
+      // Log honeypot detection to metrics
+      logBotDetection({
+        method: 'honeypot',
+        ip: req.ip,
+        userAgent: req.headers['user-agent'] || '',
+        path: req.path,
+        details: {
+          honeypotFields: {
+            website: !!req.body.website,
+            email2: !!req.body.email2,
+            phone2: !!req.body.phone2,
+          },
+        },
+      });
+
+      return res.status(200).json({ success: true }); // Return success to fool the bot
+    }
   }
   next();
 };

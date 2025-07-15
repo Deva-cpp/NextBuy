@@ -69,7 +69,10 @@ def test_rate_limiting():
             response = requests.post(
                 f"{BASE_URL}/api/auth/login",
                 json={"emailAddress": "test@rate.com", "passWord": "test123"},
-                headers={"User-Agent": "RateLimitTester/1.0"},
+                headers={
+                    "User-Agent": "RateLimitTester/1.0",
+                    "x-nextbuy-test-request": "true"  # Add test header to bypass bot detection
+                },
                 timeout=5
             )
             
@@ -77,7 +80,7 @@ def test_rate_limiting():
                 print(f"✅ PASS: Rate limiting triggered at request {i+1}")
                 return True
         
-        print("❌ FAIL: Rate limiting not triggered")
+        print(f"❌ FAIL: Rate limiting not triggered, last status: {response.status_code}")
         return False
         
     except Exception as e:
